@@ -29,6 +29,16 @@ const deviceSchema = new Schema(
   }
 );
 
+
+deviceSchema.virtual("logs",{
+  ref: "log",
+  localField: "_id",
+  foreignField: "device"
+})
+
+deviceSchema.set("toJSON", {virtuals: true});
+deviceSchema.set("toObject", {virtuals: true});
+
 const Device = model("device", deviceSchema);
 export { Device };
 

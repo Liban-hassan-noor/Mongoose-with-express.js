@@ -28,6 +28,13 @@ const userschema = new Schema(
   }
 );
 
+userschema.virtual("logs",{
+  ref: "log",
+  localField: "_id",
+  foreignField: "user"
+})
+userschema.set("toJSON", {virtuals: true});
+userschema.set("toObject", {virtuals: true});
 const User = model("user", userschema);
 export { User };
 

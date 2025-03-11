@@ -16,7 +16,7 @@ studentsRouter
 
 studentsRouter
   .route("/:id")
-  .put(putStudents)
+  .put(putStudents) 
   .delete(deleteStudents)
   .get(getSingleStudent);
 export { studentsRouter };

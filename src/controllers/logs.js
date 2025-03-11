@@ -46,13 +46,19 @@ try {
   //we are updating the data in the database
   const updatedLog = await Log.findByIdAndUpdate(
     id,
-    { device, user, status },
+    { status:"inactive" },
     { new: true, runValidators: true }
   );
   //we are checking if the updated log exist
   if (!updatedLog) {
     return res.status(404).json({ error: "Log not found" });
+
   }
+  res.json({
+    success: true,
+    message:"updated su ccessfully",
+    data: updatedLog,
+  });
 } catch (error) {
   error.status(400).json({
     error: error.message,

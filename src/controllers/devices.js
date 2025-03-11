@@ -1,4 +1,4 @@
-import { Device } from "../database/models/device.js";
+  import { Device } from "../database/models/device.js";
 
 export const getDevices = async (req, res) => {
   try {

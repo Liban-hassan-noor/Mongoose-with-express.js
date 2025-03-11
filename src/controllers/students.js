@@ -1,6 +1,7 @@
 import { Student } from "../database/models/student.js";
 
 export const getStudents = async (req, res) => {
+  
  try {const student = await student.find();
   res.json({
     success: true,
